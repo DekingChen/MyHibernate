@@ -3,6 +3,7 @@
  */
 package entity;
 
+import java.sql.Blob;
 import java.util.Date;
 
 /**
@@ -15,6 +16,15 @@ public class Students {
 	private String sex;
 	private String address;
 	private Date birthday;
+	private Blob picture;
+
+	public Blob getPicture() {
+		return picture;
+	}
+
+	public void setPicture(Blob picture) {
+		this.picture = picture;
+	}
 
 	public Students() {
 	}

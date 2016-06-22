@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016-6-22 16:13:38 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="dk.jdbc.DBHelper" table="DBHELPER">
+        <id name="id" type="java.lang.Long">
+            <column name="ID" />
+            <generator class="assigned" />
+        </id>
+        <property name="conn" type="java.sql.Connection" access="field">
+            <column name="CONN" />
+        </property>
+        <property name="pst" type="java.sql.PreparedStatement" access="field">
+            <column name="PST" />
+        </property>
+        <property name="st" type="java.sql.Statement" access="field">
+            <column name="ST" />
+        </property>
+    </class>
+</hibernate-mapping>

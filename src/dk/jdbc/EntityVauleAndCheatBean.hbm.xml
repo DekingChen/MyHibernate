@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016-6-22 16:13:38 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="dk.jdbc.EntityVauleAndCheatBean" table="ENTITYVAULEANDCHEATBEAN">
+        <id name="name" type="java.lang.String">
+            <column name="NAME" />
+            <generator class="assigned" />
+        </id>
+        <property name="thresholdValue" type="double">
+            <column name="THRESHOLDVALUE" />
+        </property>
+        <property name="isCheat" type="boolean" access="field">
+            <column name="ISCHEAT" />
+        </property>
+    </class>
+</hibernate-mapping>
