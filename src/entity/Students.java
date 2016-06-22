@@ -1,7 +1,7 @@
 /**
  * 
  */
-package hibernate;
+package entity;
 
 import java.util.Date;
 

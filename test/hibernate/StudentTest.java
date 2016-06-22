@@ -13,6 +13,8 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
+import entity.Students;
+
 public class StudentTest {
 
 	private SessionFactory sessionFactory;
@@ -24,6 +26,7 @@ public class StudentTest {
 	@Test
 	public void testSaveStudents(){
 		Students s = new Students(1,"DekingChen","boy","DK",new Date());
+		session.save(s);
 		session.save(s);
 	}
 	
