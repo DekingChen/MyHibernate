@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016-6-22 19:10:02 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="entity.Class" table="CLASS">
+        <id name="cid" type="int">
+            <column name="CID" />
+            <generator class="increment" />
+        </id>
+        <property name="cname" type="java.lang.String">
+            <column name="CNAME" />
+        </property>
+        <property name="cdesc" type="java.lang.String">
+            <column name="CDESC" />
+        </property>
+        <!-- 配置单向一对多关联关系 -->
+        <!-- cascade:级联属性    -->
+        <!-- inverse:true:由多方进行关联关系的维护，一方不需要维护 -->
+        <set name="students" table="STUDENT" inverse="true" lazy="true" cascade="save-update">
+            <key>
+                <column name="CID" />
+            </key>
+            <one-to-many class="entity.Student" />
+        </set>
+    </class>
+</hibernate-mapping>

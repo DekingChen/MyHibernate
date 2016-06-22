@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016-6-22 20:33:19 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="entity.Course" table="COURSE">
+        <id name="cid" type="int">
+            <column name="CID" />
+            <generator class="native" />
+        </id>
+        <property name="cname" type="java.lang.String">
+            <column name="CNAME" />
+        </property>
+        <set name="students" table="STUDENT" inverse="false" lazy="true">
+            <key>
+                <column name="CID" />
+            </key>
+            <one-to-many class="entity.Student" />
+        </set>
+    </class>
+</hibernate-mapping>

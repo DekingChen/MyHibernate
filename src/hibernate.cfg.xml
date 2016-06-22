@@ -13,8 +13,10 @@
     	<property name="format_sql">true</property>
     	<property name="hbm2ddl.auto">update</property>
     	<property name="hibernate.current_session_context_class">thread</property>
-    	<mapping resource="entity/Students.hbm.xml"/>
-    	<mapping resource="entity/User.hbm.xml"/>
+    <!-- 	<mapping resource="entity/Students.hbm.xml"/>
+    	<mapping resource="entity/User.hbm.xml"/> -->
+    	<mapping resource="entity/Class.hbm.xml"/>
+    	<mapping resource="entity/Student.hbm.xml"/>
     </session-factory>
 </hibernate-configuration>
 

@@ -3,10 +3,10 @@
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <!-- Generated 2016-6-22 19:10:02 by Hibernate Tools 3.4.0.CR1 -->
 <hibernate-mapping>
-    <class name="entity.Students" table="STUDENTS">
+    <class name="entity.Student" table="STUDENT">
         <id name="sid" type="int">
             <column name="SID" />
-            <generator class="assigned" />
+            <generator class="increment" />
         </id>
         <property name="sname" type="java.lang.String">
             <column name="SNAME" />
@@ -14,14 +14,7 @@
         <property name="sex" type="java.lang.String">
             <column name="SEX" />
         </property>
-        <property name="address" type="java.lang.String">
-            <column name="ADDRESS" />
-        </property>
-        <property name="birthday" type="java.util.Date">
-            <column name="BIRTHDAY" />
-        </property>
-        <property name="picture" type="java.sql.Blob">
-            <column name="PICTURE" />
-        </property>
+        <!-- 设置多对一关联关系  -->
+         <many-to-one name="classes" class="entity.Class" column="cid"></many-to-one>
     </class>
 </hibernate-mapping>
