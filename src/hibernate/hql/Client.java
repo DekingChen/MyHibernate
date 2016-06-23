@@ -19,18 +19,6 @@ public class Client {
 	public static Query query = null;
 	public static Session session = null;
 
-	public static void main(String args[]) {
-
-		init();// 初始化session连接
-
-		//querySeller();
-		//queryCommodity();
-		//quereyCustomer();
-		//queryOrder();
-		//queryOrderItem();
-		queryReturn();
-		destroy();// 释放session资源
-	}
 
 	public static void init() {
 		session = HibernateUtil.getSession();
@@ -129,5 +117,63 @@ public class Client {
 			System.out.println("address:"+list.get(2));
 		}
 	}
+	
+	public static void queryWhere(){
+		sql = "from Commodity c where c.price>400";
+		query = session.createQuery(sql);
+		@SuppressWarnings("unchecked")
+		List<Commodity> commodities = query.list();
+		for (Commodity com : commodities) {
+			System.out.println(com.toString() + "Seller:"
+					+ com.getSeller().toString());
+		}
+	}
+	
+	public static void queryCollection(){
+		sql = "select Order o where o.orderItems is not empty";
+		query = session.createQuery(sql);
+		@SuppressWarnings("unchecked")
+		List<OrderItem> orders = query.list();
+		for (OrderItem order : orders) {
+			//System.out.print(order);
+			System.out.println(order.toString());
+			//System.out.println(order.getOrder().toString());
+		}
+	}
+	
+	public static void queryOnly(){
+		sql  = "from Customer as c where c.name='张三'" ;
+		query = session.createQuery(sql);
+		Customer c = (Customer) query.uniqueResult();
+		System.out.print(c.toString());
+	}
+	
+	public static void queryOrderBy(){
+		sql = "from Commodity c order by price asc";
+		query = session.createQuery(sql);
+		@SuppressWarnings("unchecked")
+		List<Commodity> commodities = query.list();
+		for (Commodity com : commodities) {
+			System.out.println(com.toString() + "Seller:"
+					+ com.getSeller().toString());
+		}
+	}
+	
+	public static void main(String args[]) {
 
+		init();// 初始化session连接
+
+		//querySeller();
+		//queryCommodity();
+		//quereyCustomer();
+		queryOrder();
+		//queryOrderItem();
+		//queryReturn();
+		//queryWhere();
+		//queryCollection();
+		//queryOnly();
+		//queryOrderBy();
+		
+		destroy();// 释放session资源
+	}
 }
