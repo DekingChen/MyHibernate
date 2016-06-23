@@ -17,6 +17,8 @@
     	<mapping resource="entity/User.hbm.xml"/> -->
     	<mapping resource="entity/Class.hbm.xml"/>
     	<mapping resource="entity/Student.hbm.xml"/>
+    	<mapping resource="entity/Project.hbm.xml"/>
+    	<mapping resource="entity/Employee.hbm.xml"/>
     </session-factory>
 </hibernate-configuration>
 

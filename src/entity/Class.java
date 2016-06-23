@@ -12,7 +12,7 @@ public class Class {
 	public Class() {
 	}
 
-	public Class( String cname, String cdesc) {
+	public Class(String cname, String cdesc) {
 		this.cname = cname;
 		this.cdesc = cdesc;
 	}
