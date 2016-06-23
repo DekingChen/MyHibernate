@@ -19,6 +19,11 @@
     	<mapping resource="entity/Student.hbm.xml"/>
     	<mapping resource="entity/Project.hbm.xml"/>
     	<mapping resource="entity/Employee.hbm.xml"/>
+    	<mapping resource="entity/shop/Seller.hbm.xml"/>
+    	<mapping resource="entity/shop/Commodity.hbm.xml"/>
+    	<mapping resource="entity/shop/Customer.hbm.xml"/>
+    	<mapping resource="entity/shop/Order.hbm.xml"/>
+    	<mapping resource="entity/shop/OrderItem.hbm.xml"/>
     </session-factory>
 </hibernate-configuration>
 

@@ -28,6 +28,7 @@ public class HibernateUtil {
 	//获取Session对象
 	public static Session getSession() {
 		// 创建会话对象
+		if(session==null)
 		session = sessionFactory.openSession();
 		return session;
 	}
